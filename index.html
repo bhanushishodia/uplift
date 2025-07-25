@@ -9,42 +9,61 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <title>Uplift Services</title>
   <style>
+
+
     .custom-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
 
     .logo-img {
-  height: 70px; /* default for desktop */
-}
+      height: 70px;
+      /* default for desktop */
+    }
 
-@media (max-width: 768px) {
-  .logo-img {
-    height: 60px; /* smaller logo on mobile */
-  }
-}
+    @media (max-width: 768px) {
+      .logo-img {
+        height: 60px;
+        /* smaller logo on mobile */
+      }
+    }
 
     /* Vertical dotted arrow between top and bottom steps */
-    @media (min-width: 768px) {
-      .vertical-dotted-line {
-        position: absolute;
-        left: 0%;
-        top: 100%;
-        transform: translateX(-50%);
-        width: 2px;
-        height: 280px;
-        background-image: linear-gradient(to bottom, white 50%, transparent 0%);
-        background-size: 6px 6px;
-        background-repeat: repeat-y;
-        z-index: 0;
-      }
+   @media (min-width: 768px) {
+  .vertical-dotted-line {
+    position: absolute;
+    left: 0%;
+    top: 4%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 300px;
+    background-image: linear-gradient(to bottom, white 50%, transparent 0%);
+    background-size: 6px 6px;
+    background-repeat: repeat-y;
+    z-index: 0;
+  }
+
+  .vertical-dotted-line::after {
+    content: "";
+    position: absolute;
+    top: 300px; /* same as vertical height */
+    left: 1px; /* slight shift to align properly */
+    width: 80px;
+    height: 2px;
+    background-image: linear-gradient(to right, white 50%, transparent 0%);
+    background-size: 6px 6px;
+    background-repeat: repeat-x;
+  }
+
 
       .with-arrow-down::after {
-        content: "";
+        content: "";  
         position: absolute;
-        top: calc(100% + 78px);
+        top: calc(100% + -90px);
         left: 0%;
         transform: translateX(-50%) rotate(45deg);
         width: 10px;
@@ -55,19 +74,32 @@
       }
     }
 
-    @media (min-width: 768px) {
-      .vertical-dotted-line2 {
-        position: absolute;
-        left: 100%;
-        top: 100%;
-        transform: translateX(-50%);
-        width: 2px;
-        height: 280px;
-        background-image: linear-gradient(to bottom, white 50%, transparent 0%);
-        background-size: 6px 6px;
-        background-repeat: repeat-y;
-        z-index: 0;
-      }
+  @media (min-width: 768px) {
+  .vertical-dotted-line2 {
+    position: absolute;
+    left: 100%;
+    top: 6%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 300px;
+    background-image: linear-gradient(to bottom, white 50%, transparent 0%);
+    background-size: 6px 6px;
+    background-repeat: repeat-y;
+    z-index: 0;
+  }
+
+  .vertical-dotted-line2::after {
+    content: "";
+    position: absolute;
+    top: 300px; /* height before turn */
+    left: -80px; /* to turn left */
+    width: 80px;
+    height: 2px;
+    background-image: linear-gradient(to right, white 50%, transparent 0%);
+    background-size: 6px 6px;
+    background-repeat: repeat-x;
+  }
+
 
       .with-arrow-down2::after {
         content: "";
@@ -90,6 +122,14 @@
       background-color: #fff;
     }
 
+    .process-img2{
+
+      padding: 6px;
+      width: 70%;
+     
+      
+
+    }
     .process-step {
       position: relative;
       margin-bottom: 40px;
@@ -105,7 +145,7 @@
       .process-arrow:after {
         content: "";
         position: absolute;
-        top: 7%;
+        top: 5%;
         right: -50px;
         width: 100px;
         height: 2px;
@@ -118,117 +158,82 @@
         display: none;
       }
     }
+    .overlap-buttons {
+
+      z-index: 10;
+    }
+
+    .up_img {
+      width: 34%;
+    }
   </style>
 
 <body style="background-color: #000;">
 
-<header class="px-md-5 px-2"
-  style="background-image: url('images/Need of the hour! (24).png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-  
-  <!-- Top Row (Logo + WhatsApp Number on large devices only) -->
-  <div class="d-flex flex-wrap align-items-center justify-content-between px-5 py-2 d-none d-lg-flex">
-    <!-- Logo -->
-    <div class="d-flex align-items-center">
-      <!-- Optional: Place logo here if needed in top row -->
-    </div>
+  <header class="px-md-5 px-2 sticky-top  shadow-sm"
+    style="background-image: url('images/Need of the hour! (24).png'); background-size: cover; background-position: center; background-repeat: no-repeat;" data-aos="fade-down" data-aos-duration="1000">
 
-    <!-- WhatsApp Number -->
-    <div class="text-end">
-      <span class="text-success fw-bold">Call or Whatsapp:</span>
-      <span class="fw-bold text-warning fs-5">+91 9560 222 957</span>
-    </div>
-  </div>
-
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg border-bottom border-secondary px-4 py-0">
-    <div class="container-fluid">
+    <!-- Top Row (Logo + WhatsApp Number on large devices only) -->
+    <div class="d-flex flex-wrap align-items-center justify-content-between px-5 py-2 d-none d-lg-flex">
       <!-- Logo -->
-      <a class="navbar-brand d-flex align-items-center text-white fw-bold" href="#">
-       
-        <img src="/images/Uplift logo.png" alt="UPLIFT Logo" class="me-2 logo-img">
+      <div class="d-flex align-items-center">
+        <!-- Optional: Place logo here if needed in top row -->
+      </div>
 
-      </a>
-
-      <!-- Toggle Button for Mobile -->
-   <!-- Mobile Toggler -->
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon custom-toggler-icon"></span>
-</button>
-
-
-      <!-- Navigation Links -->
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav me-3 mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link text-white px-3" href="#">How it works</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white px-3" href="#">Our Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white px-3" href="#">Partner</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white px-3" href="#">About</a>
-          </li>
-        </ul>
-        <button class="btn text-white fw-bold px-4 rounded-pill"
-          style="background: linear-gradient(to right, #f36f21, #d54e00);">BOOK NOW</button>
+      <!-- WhatsApp Number -->
+      <div class="text-end">
+        <span class="text-success fw-bold">Call or Whatsapp:</span>
+        <span class="fw-bold text-warning fs-5">+91 9560 222 957</span>
       </div>
     </div>
-  </nav>
-</header>
 
-
-
-  <!-- Header Section -->
-  <header class="bg-dark text-white py-2 d-none">
-    <div class="container-fluid px-4">
-      <div class="d-flex flex-wrap align-items-center justify-content-between">
-
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg border-bottom border-secondary px-4 py-0">
+      <div class="container-fluid">
         <!-- Logo -->
-        <div class="d-flex align-items-center">
-          <img src="/images/Uplift logo.png" alt="UPLIFT Logo" height="60" class="me-2">
-        </div>
+        <a class="navbar-brand d-flex align-items-center text-white fw-bold" href="#">
 
-        <!-- WhatsApp Number -->
-        <div class="text-end d-none d-lg-block">
-          <span class="text-success fw-bold">Call or Whatsapp:</span>
-          <span class="fw-bold text-warning fs-5">+91 9560 222 957</span>
-        </div>
+          <img src="/images/Uplift logo.png" alt="UPLIFT Logo" class="me-2 logo-img">
+
+        </a>
 
         <!-- Toggle Button for Mobile -->
-        <button class="navbar-toggler d-lg-none ms-auto" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarMenu">
-          <span class="navbar-toggler-icon"></span>
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon custom-toggler-icon"></span>
         </button>
-      </div>
 
-      <!-- Navigation Menu -->
-      <nav class="navbar navbar-expand-lg">
-        <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
-          <ul class="navbar-nav ms-auto align-items-lg-center">
-            <li class="nav-item px-2"><a class="nav-link text-white" href="#">How it works</a></li>
-            <li class="nav-item px-2"><a class="nav-link text-white" href="#">Our Services</a></li>
-            <li class="nav-item px-2"><a class="nav-link text-white" href="#">Partner</a></li>
-            <li class="nav-item px-2"><a class="nav-link text-white" href="#">About</a></li>
-            <li class="nav-item px-2 mt-2 mt-lg-0">
-              <a href="#" class="btn fw-bold text-white px-4 py-2" style="background-color: #f47920; border: none;">
-                BOOK NOW
-              </a>
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav me-3 mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-white px-3" href="#">How it works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white px-3" href="#">Our Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white px-3" href="#">Partner</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white px-3" href="#">About</a>
             </li>
           </ul>
+          <button class="btn text-white fw-bold px-4 rounded-pill"
+            style="background: linear-gradient(to right, #f36f21, #d54e00);">BOOK NOW</button>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
+
   <!-- Hero Section -->
   <section
     style="background-image: url('images/Need of the hour! (24).png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="container py-5">
       <div class="row align-items-center text-center text-md-start">
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
 
           <h6 class="fw-semibold">
             <span class="text-warning">Simple.</span>
@@ -240,7 +245,7 @@
           <p class="mt-3 text-white pt-4">Maintenance, Breakdown, Cleaning – All Covered.<br>
             Professional Technicians. Instant Booking. Hassle-Free.</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
           <img src="images/Need of the hour!.png" class="img-fluid" alt="Lift Technicians">
         </div>
       </div>
@@ -248,28 +253,28 @@
   </section>
 
   <!-- Features Section -->
-  <section class=" py-4">
+  <section class="py-4">
     <div class="container">
       <div class="row text-center border-top pt-5">
-        <div class="col-6 col-md-3 mb-3">
+        <div class="col-6 col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="100">
           <div class="d-flex align-items-center text-start">
             <img src="/images/Need of the hour! (1).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
             <p class="fw-bold mb-0 text-white">Satisfaction <br> Guarantee</p>
           </div>
         </div>
-        <div class="col-6 col-md-3 mb-3">
+        <div class="col-6 col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="200">
           <div class="d-flex align-items-center text-start">
             <img src="/images/Need of the hour! (19).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
             <p class="fw-bold mb-0 text-white">Transparent & <br> Fixed Pricing</p>
           </div>
         </div>
-        <div class="col-6 col-md-3 mb-3">
+        <div class="col-6 col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="300">
           <div class="d-flex align-items-center text-start">
             <img src="/images/Need of the hour! (20).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
             <p class="fw-bold mb-0 text-white">Verified Trained <br> Technicians</p>
           </div>
         </div>
-        <div class="col-6 col-md-3 mb-3">
+        <div class="col-6 col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="400">
           <div class="d-flex align-items-center text-start">
             <img src="/images/Need of the hour! (21).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
             <p class="fw-bold mb-0 text-white">Genuine <br> Parts & Tools</p>
@@ -281,10 +286,18 @@
   </section>
 
   <!-- User Journey Banner -->
-  <section class="container  mx-auto" style="max-width: 700px;">
-    <p class="mb-0 py-3  bg-dark text-white text-center fw-bold">User Journey from <span
-        class="text-warning">Frustration to Fix — </span> <br> Powered by UPLIFT.</p>
-  </section>
+<section class="container mx-auto" style="max-width: 700px;">
+  <p
+    class="mb-0 py-4 px-3 bg-dark text-white text-center fw-bold rounded"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
+    User Journey from
+    <span class="text-warning">Frustration to Fix —</span><br>
+    Powered by <span class="text-info">UPLIFT</span>.
+  </p>
+</section>
+
 
   <!-- Steps Section -->
   <section
@@ -295,7 +308,7 @@
 
       <!-- Top Row -->
       <div class="row text-center justify-content-center g-5 align-items-center px-5">
-        <div class="col-12 col-md-4 process-step with-arrow-down">
+        <div class="col-12 col-md-4 process-step with-arrow-down"  data-aos="fade-up" data-aos-delay="0">
           <h6 class="text-danger fw-bold">Identify Need/ Issue</h6>
           <p class="small text-white">Lift breaks down often. Local vendor is <br> unreliable. Residents are frustrated.
           </p>
@@ -303,13 +316,13 @@
           <div class="vertical-dotted-line"></div>
         </div>
 
-        <div class="col-12 col-md-4  my-auto ">
-          <h6 class="invisible">Spacer</h6>
-          <img src="images/Need of the hour! (2).png" class="img-fluid w-50 process-img" alt="Animated Person">
+        <div class="col-12 col-md-4 my-auto " data-aos="zoom-in" data-aos-delay="200">
+          <!-- <h6 class="invisible">Spacer</h6> -->
+          <img src="images/Need of the hour! (2).png" class="img-fluid  process-img2" alt="Animated Person">
 
         </div>
 
-        <div class="col-12 col-md-4 process-step last-step with-arrow-down">
+        <div class="col-12 col-md-4 process-step last-step with-arrow-down"  data-aos="fade-up" data-aos-delay="400">
           <h6 class="text-success fw-bold">Reports & Follow ups</h6>
           <p class="small text-white">Subscribes to AMC → Receives <br> reminders, logs, priority support.</p>
           <img src="images/Need of the hour! (6).png" class="img-fluid process-img" alt="Reports and Updates">
@@ -320,19 +333,19 @@
 
       <!-- Bottom Row -->
       <div class="row text-center justify-content-center g-5 align-items-center px-5 ">
-        <div class="col-12 col-md-4 process-step process-arrow">
+        <div class="col-12 col-md-4 process-step process-arrow" data-aos="fade-up" data-aos-delay="0">
           <h6 class="text-warning fw-bold">Connect with us</h6>
           <p class="small text-white">Connect with UPLIFT by <br> sending a "Hi" on WhatsApp.</p>
           <img src="images/Need of the hour! (5).png" class="img-fluid process-img" alt="WhatsApp">
         </div>
 
-        <div class="col-12 col-md-4 process-step process-arrow">
+        <div class="col-12 col-md-4 process-step process-arrow" data-aos="fade-up" data-aos-delay="200">
           <h6 class="text-warning fw-bold">Share Details & Book</h6>
           <p class="small text-white">Choose service + Share building & <br> plan → Confirm slot in 2 mins.</p>
           <img src="images/Need of the hour! (6).png" class="img-fluid process-img" alt="Booking">
         </div>
 
-        <div class="col-12 col-md-4 process-step last-step">
+        <div class="col-12 col-md-4 process-step last-step" data-aos="fade-up" data-aos-delay="400">
           <h6 class="text-info fw-bold">Visit & Service</h6>
           <p class="small text-white">Technician arrives on time + Fixes issue <br> → Sends digital report via WhatsApp.
           </p>
@@ -348,14 +361,14 @@
   <!-- Solutions Section -->
   <section
     style="background-image: url('images/Need of the hour! (24).png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <div class="container text-white py-5 text-center">
+    <div class="container text-white py-5 text-center" data-aos="fade-up" data-aos-duration="1000">
       <h2 class="fw-bold">Solutions for <span class="text-warning">Every Stage</span> of Lift Care</h2>
       <p class="mt-3 text-success fw-semibold">Our Services & Plans | Perfect Fit for Builder Floors & Mid-Rises</p>
     </div>
 
     <!-- Services Overview Section -->
     <div class="container pb-5">
-      <div class="row align-items-center">
+      <div class="row align-items-center pb-5">
         <!-- Left Service Buttons -->
         <div class="col-md-4 px-5 mb-4 mb-md-0 text-center text-md-start">
           <div class="d-grid gap-3 px-4">
@@ -402,87 +415,85 @@
   </section>
 
   <!-- Features + Form Section -->
-  <section class=" py-5 text-white" style="background-color: #3d5383;">
-    <div class="container py-5">
-      <div class="row">
-        <!-- Left Feature Column -->
-        <div class="col-lg-6 mb-4 mb-lg-0 my-auto">
-          <h5 class="fw-bold text-lg-start"><span class="text-warning">UPLIFT</span> is India’s first D2C, tech-enabled,
-            and<br>
-            on-demand lift maintenance service</h5>
-          <p class="fst-italic text-lg-start">—because your building deserves<br>more than last-minute fixes.</p>
+ <section class="text-white" style="background-color: #3d5383;">
+  <div class="container">
+    <div class="row">
+      
+      <!-- Left Feature Column -->
+      <div class="col-lg-7 my-auto" data-aos="fade-right" data-aos-duration="1000">
+        <h5 class="fw-bold text-lg-start">
+          <span class="text-warning">UPLIFT</span> is India’s first D2C, tech-enabled,<br>on-demand lift maintenance service
+        </h5>
+        <h6 class="fst-italic text-lg-start fw-bold">
+          —because your building deserves<br>more than last-minute fixes.
+        </h6>
 
-          <div class="row text-center  mt-4 px-0">
-            <div class="col-6 col-md-3 mb-3 p-0 m-0">
-              <img src="images/Need of the hour! (12).png" class="img-fluid w-50 mb-3" alt="">
-              <h6>WhatsApp Updates & Support</h6>
-              <p class="small p-0 m-0">Easy booking, reminders, reports, and technician tracking on WhatsApp.
-                until you’re happy</p>
-            </div>
-            <div class="col-6 col-md-3 mb-3">
-
-              <img src="images/Need of the hour! (13).png" class="img-fluid w-50 mb-3" alt="">
-              <h6>On-Time<br>Visits</h6>
-              <p class="small">Scheduled and punctual
-                — no waiting, no chasing.</p>
-            </div>
-            <div class="col-6 col-md-3 mb-3">
-              <img src="images/Need of the hour! (14).png" class="img-fluid w-50 mb-3" alt="">
-              <h6 class="small">Digital<br>Service Reports</h6>
-              <p class="small">Checklist or summary after
-                every job — full transparency.</p>
-            </div>
-            <div class="col-6 col-md-3 mb-3">
-              <img src="images/Need of the hour! (15).png" class="img-fluid w-50 mb-3" alt="">
-              <h6>Emergency<br>Helpline Access</h6>
-              <p class="small">Quick contact during service
-                or post-job follow-up.</p>
-            </div>
+        <div class="row text-center mt-4 px-0">
+          <div class="col-6 col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="100">
+            <img src="images/Need of the hour! (12).png" class="img-fluid up_img mb-3" alt="">
+            <h6>WhatsApp Updates & Support</h6>
+            <p class="small p-0 m-0">Booking, updates, and technician tracking via WhatsApp</p>
           </div>
-        </div>
 
-        <!-- Right Form Column -->
-        <div class="col-lg-6 text-lg-start">
-          <div class=" text-dark p-4 rounded" style="background-color: #aabce2;">
-            <p class="fst-italic fw-bold mb-3 text-center">“No stress. No chasing. Just <br> reliable lift service —
-              finally.”</p>
-            <form>
-              <div class="mb-3">
-                <label for="name" class="form-label">Full Name</label>
-                <input type="text" id="name" class="form-control" placeholder="Enter your full name">
-              </div>
+          <div class="col-6 col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="200">
+            <img src="images/Need of the hour! (13).png" class="img-fluid up_img mb-3" alt="">
+            <h6>On-Time<br>Visits</h6>
+            <p class="small">Scheduled and punctual — no waiting, no chasing.</p>
+          </div>
 
-              <div class="mb-3">
-                <label for="mobile" class="form-label">Mobile Number (Preferred WhatsApp Active)</label>
-                <input type="tel" id="mobile" class="form-control" placeholder="Enter mobile number">
-              </div>
+          <div class="col-6 col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="300">
+            <img src="images/Need of the hour! (14).png" class="img-fluid up_img mb-3" alt="">
+            <h6 class="small">Digital<br>Service Reports</h6>
+            <p class="small">Checklist or summary after every job — full transparency.</p>
+          </div>
 
-              <div class="mb-3">
-                <label for="service" class="form-label">Looking for which Service</label>
-                <input type="text" id="service" class="form-control" placeholder="e.g., Inspect+, CabinClean">
-              </div>
-
-              <div class="mb-3">
-                <label for="location" class="form-label">Location</label>
-                <input type="text" id="location" class="form-control" placeholder="Enter your city or area">
-              </div>
-
-              <button type="submit" class="btn btn-primary mx-auto d-block w-50">Request Callback!</button>
-            </form>
-
+          <div class="col-6 col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="400">
+            <img src="images/Need of the hour! (15).png" class="img-fluid up_img mb-3" alt="">
+            <h6>Emergency<br>Helpline Access</h6>
+            <p class="small">Quick contact during service or post-job follow-up.</p>
           </div>
         </div>
       </div>
+
+      <!-- Right Form Column -->
+      <div class="col-lg-5 text-lg-start text-center justify-content-center position-relative" 
+           style="z-index: 2; margin-top: -25px; margin-bottom: -25px;" 
+           data-aos="fade-left" data-aos-duration="1000">
+        <div class="text-dark p-4 rounded" style="background-color: #aabce2;">
+          <p class="fst-italic fw-bold mb-3 text-center">
+            “No stress. No chasing. Just <br> reliable lift service — finally.”
+          </p>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Enter your full name">
+            </div>
+            <div class="mb-3">
+              <label for="mobile" class="form-label">Mobile Number (Preferred WhatsApp Active)</label>
+              <input type="tel" id="mobile" class="form-control" placeholder="Enter mobile number">
+            </div>
+            <div class="mb-3">
+              <label for="service" class="form-label">Looking for which Service</label>
+              <input type="text" id="service" class="form-control" placeholder="e.g., Inspect+, CabinClean">
+            </div>
+            <div class="mb-3">
+              <label for="location" class="form-label">Location</label>
+              <input type="text" id="location" class="form-control" placeholder="Enter your city or area">
+            </div>
+            <button type="submit" class="btn btn-primary mx-auto d-block w-50">Request Callback!</button>
+          </form>
+        </div>
+      </div>
+
     </div>
-  </section>
-
-
+  </div>
+</section>
 
   <!-- About Us Section -->
   <section
     style="background-image: url('images/Need of the hour! (24).png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="container py-5">
-      <div class="row align-items-center">
+      <div class="row align-items-center pt-5">
         <!-- Text Content -->
         <div class="col-lg-6 mb-4 mb-lg-0 text-start">
           <h6 class="text-uppercase fw-bold text-white">About Us</h6>
@@ -508,37 +519,41 @@
           </p>
           <!-- Call to Action Buttons -->
 
+          <!-- Overlapping Buttons -->
+          <div class="container position-relative">
+            <div
+              class="row g-5 justify-content-center overlap-buttons position-absolute top-0 start-50 translate-middle-x w-100">
 
-          <div class="row g-5">
-            <!-- Book a Service -->
-            <div class="col-12 col-md-6">
-              <button class="btn btn-dark w-100 py-4 h-100 d-flex align-items-center justify-content-center">
-                <img src="images/Need of the hour! (17).png" class="me-3 img-fluid" style="max-width: 60px;" alt="icon">
-                <div class="text-start fw-bold">
-                  Book<br><span class="fw-lighter">a Service</span>
-                </div>
-              </button>
-            </div>
+              <!-- Book a Service -->
+              <div class="col-12 col-md-6">
+                <button class="btn btn-dark w-100 py-4 h-100 d-flex align-items-center justify-content-center">
+                  <img src="images/Need of the hour! (17).png" class="me-3 img-fluid" style="max-width: 60px;"
+                    alt="icon">
+                  <div class="text-start fw-bold">
+                    Book<br><span class="fw-lighter">a Service</span>
+                  </div>
+                </button>
+              </div>
 
-            <!-- Partner with Us -->
-            <div class="col-12 col-md-6">
-              <button class="btn btn-dark w-100 h-100 py-4 d-flex align-items-center justify-content-center">
-                <img src="images/Need of the hour! (18).png" class="me-3 img-fluid" style="max-width: 60px;" alt="icon">
-                <div class="text-start fw-bold">
-                  Partner<br><span class="fw-lighter">with us</span>
-                </div>
-              </button>
+              <!-- Partner with Us -->
+              <div class="col-12 col-md-6">
+                <button class="btn btn-dark w-100 py-4 h-100 d-flex align-items-center justify-content-center">
+                  <img src="images/Need of the hour! (18).png" class="me-3 img-fluid" style="max-width: 60px;"
+                    alt="icon">
+                  <div class="text-start fw-bold">
+                    Partner<br><span class="fw-lighter">with us</span>
+                  </div>
+                </button>
+              </div>
+
             </div>
           </div>
-
-
-
         </div>
 
 
         <!-- Vision Card -->
-        <div class="col-lg-6 text-center">
-          <img src="images/Need of the hour! (16).png" alt="Technician at Elevator" class="img-fluid rounded">
+        <div class="col-lg-6 text-center px-md-5 text-end">
+          <img src="images/Need of the hour! (16).png" alt="Technician at Elevator" class="img-fluid rounded ">
           <div class="text-dark p-3 rounded text-center" style="background-color: #f88c3d;">
             <p>To become India’s most trusted partner for elevator care, redefining industry benchmarks for
               professionalism,<br> transparency, and service quality.</p>
@@ -548,58 +563,45 @@
       </div>
     </div>
   </section>
-
-
-
   <!-- Footer Placeholder -->
-  <section class="text-white pt-5 text-lg-start text-md-start text-center" style="background-color: #64a345;">
-    <div class="container">
-      <div class="row">
-        <!-- Address -->
-        <div class="col-md-4 mb-4">
-          <h6 class="fw-bold">Address</h6>
-          <p class="mb-0">J-76 Phase 1, Ashok Vihar</p>
-          <p class="mb-0">Delhi - 110052</p>
-        </div>
-
-        <!-- Contact -->
-        <div class="col-md-4 mb-4">
-          <h6 class="fw-bold">Contact</h6>
-          <p class="mb-0">
-            <a href="mailto:info@ullift.in" class="text-white text-decoration-none">
-              ✉️ info@ullift.in
-            </a>
-          </p>
-          <p class="mb-0">
-            <a href="tel:+919560222957" class="text-white text-decoration-none">
-              📞 +91 9560 222 957
-            </a>
-          </p>
-        </div>
-
-        <!-- Social / Dummy Links -->
-        <div class="col-md-4 mb-4">
-          <h6 class="fw-bold">Quick Links</h6>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Services</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Support</a></li>
-          </ul>
-        </div>
+  <section class="text-white pt-5 text-lg-start text-md-start text-center"
+  style="position: relative; z-index: 1; background-color: #64a345;">
+  <div class="container pt-5">
+    <div class="row">
+      <!-- Address -->
+      <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-duration="800">
+        <h6 class="fw-bold">Address</h6>
+        <p class="mb-0">J-76 Phase 1, Ashok Vihar</p>
+        <p class="mb-0">Delhi - 110052</p>
       </div>
 
-      <!-- Divider -->
-      <hr class="border-white opacity-50">
-
-      <!-- Copyright -->
-      <div class="row">
-        <div class="col text-center pb-3">
-          <small>© <span id="year"></span> Ullift. All rights reserved.</small>
-        </div>
+      <!-- Contact -->
+      <div class="col-md-6 text-md-end text-center mb-4" data-aos="fade-left" data-aos-duration="800">
+        <h6 class="fw-bold">Contact</h6>
+        <p class="mb-0">
+          <a href="mailto:info@upllift.in" class="text-white text-decoration-none">
+            ✉️ info@upllift.in
+          </a>
+        </p>
+        <p class="mb-0">
+          <a href="tel:+919560222957" class="text-white text-decoration-none">
+            📞 +91 9560 222 957
+          </a>
+        </p>
       </div>
     </div>
-  </section>
+
+    <!-- Divider -->
+    <hr class="border-white opacity-50" data-aos="fade-up" data-aos-delay="200">
+
+    <!-- Copyright -->
+    <div class="row">
+      <div class="col text-center pb-3" data-aos="zoom-in" data-aos-delay="400">
+        <small>© <span id="year"></span> Uplift. All rights reserved.</small>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Optional JS for dynamic year -->
   <script>
@@ -609,8 +611,14 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation duration in ms
+    once: true      // animation only once
+  });
+</script>
 
 </body>
-
 </html>
