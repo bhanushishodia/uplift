@@ -36,13 +36,13 @@ img, video, section, div {
     }
 
     .logo-img {
-      height: 70px;
+      height: 55px;
       /* default for desktop */
     }
 
     @media (max-width: 768px) {
       .logo-img {
-        height: 60px;
+        height: 50px;
         /* smaller logo on mobile */
       }
     }
@@ -190,13 +190,8 @@ img, video, section, div {
   </style>
 
 <body style="background-color: #000;">
-
-  <header class="px-md-5 px-2 sticky-top  shadow-sm"
-    style="background-image: url('images/Need of the hour! (24).png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
-    data-aos="fade-down" data-aos-duration="1000">
-
     <!-- Top Row (Logo + WhatsApp Number on large devices only) -->
-    <div class="d-flex flex-wrap align-items-center justify-content-between px-5 py-2 d-none d-lg-flex">
+    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between px-5 py-2 d-none d-lg-flex" style="background: linear-gradient(to right, #f36f218c, #d54e004d);">
       <!-- Logo -->
       <div class="d-flex align-items-center">
         <!-- Optional: Place logo here if needed in top row -->
@@ -204,13 +199,18 @@ img, video, section, div {
 
       <!-- WhatsApp Number -->
       <div class="text-end">
-        <span class="text-success fw-bold">Call or Whatsapp:</span>
-        <span class="fw-bold text-warning fs-5">+91 9560 222 957</span>
+        <span style="color: #64a345; font-weight: 600;">Call or Whatsapp:</span>&nbsp;
+        <span class="fw-bold fs-5" style="color:#f9c026;">+91 9560 222 957</span>
       </div>
     </div>
+  <header class="px-md-5 px-2 sticky-top  shadow-sm"
+    style="background-image: url('images/Need of the hour! (24).png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+    data-aos="fade-down" data-aos-duration="1000">
+
+
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg border-bottom border-secondary px-4 py-0">
+    <nav class="navbar navbar-expand-lg border-bottom border-secondary px-0 py-0">
       <div class="container-fluid">
         <!-- Logo -->
         <a class="navbar-brand d-flex align-items-center text-white fw-bold" href="#">
@@ -275,37 +275,37 @@ img, video, section, div {
   </section>
 
   <!-- Features Section -->
-  <section class="py-4">
-    <div class="container">
-      <div class="row text-center border-top pt-5">
-        <div class="col-6 col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="100">
-          <div class="d-flex align-items-center text-start">
-            <img src="/images/Need of the hour! (1).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
-            <p class="fw-bold mb-0 text-white">Satisfaction <br> Guarantee</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="200">
-          <div class="d-flex align-items-center text-start">
-            <img src="/images/Need of the hour! (19).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
-            <p class="fw-bold mb-0 text-white">Transparent & <br> Fixed Pricing</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="300">
-          <div class="d-flex align-items-center text-start">
-            <img src="/images/Need of the hour! (20).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
-            <p class="fw-bold mb-0 text-white">Verified Trained <br> Technicians</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="400">
-          <div class="d-flex align-items-center text-start">
-            <img src="/images/Need of the hour! (21).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
-            <p class="fw-bold mb-0 text-white">Genuine <br> Parts & Tools</p>
-          </div>
+<section class="py-4">
+  <div class="container">
+    <div class="row justify-content-center border-top pt-5">
+      <div class="col-12 col-md-3 mb-3 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+        <div class="d-flex align-items-center text-start">
+          <img src="/images/Need of the hour! (1).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
+          <p class="fw-bold mb-0 text-white">Satisfaction <br> Guarantee</p>
         </div>
       </div>
-
+      <div class="col-12 col-md-3 mb-3 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="200">
+        <div class="d-flex align-items-center text-start">
+          <img src="/images/Need of the hour! (19).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
+          <p class="fw-bold mb-0 text-white">Transparent & <br> Fixed Pricing</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="300">
+        <div class="d-flex align-items-center text-start">
+          <img src="/images/Need of the hour! (20).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
+          <p class="fw-bold mb-0 text-white">Verified Trained <br> Technicians</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="400">
+        <div class="d-flex align-items-center text-start">
+          <img src="/images/Need of the hour! (21).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
+          <p class="fw-bold mb-0 text-white">Genuine <br> Parts & Tools</p>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- User Journey Banner -->
   <section class="container mx-auto" style="max-width: 700px;">
@@ -326,7 +326,7 @@ img, video, section, div {
       <!-- Top Row -->
 
       <!-- Top Row -->
-      <div class="row text-center justify-content-center g-5 align-items-center px-5">
+      <div class="row text-center justify-content-center g-5 align-items-center px-md-5 px-0 mx-auto">
         <div class="col-12 col-md-4 process-step with-arrow-down" data-aos="fade-up" data-aos-delay="0">
           <h6 class="text-danger fw-bold">Identify Need/ Issue</h6>
           <p class="small text-white">Lift breaks down often. Local vendor is <br> unreliable. Residents are frustrated.
@@ -351,7 +351,7 @@ img, video, section, div {
 
 
       <!-- Bottom Row -->
-      <div class="row text-center justify-content-center g-5 align-items-center px-5 ">
+      <div class="row text-center justify-content-center g-5 align-items-center px-md-5 px-0 mx-auto ">
         <div class="col-12 col-md-4 process-step process-arrow" data-aos="fade-up" data-aos-delay="0">
           <h6 class="text-warning fw-bold">Connect with us</h6>
           <p class="small text-white">Connect with UPLIFT by <br> sending a "Hi" on WhatsApp.</p>
@@ -439,7 +439,7 @@ img, video, section, div {
       <div class="row">
 
         <!-- Left Feature Column -->
-        <div class="col-lg-7 my-auto" data-aos="fade-right" data-aos-duration="1000">
+        <div class="col-lg-7 my-auto pt-md-0 pt-lg-0 pt-5" data-aos="fade-right" data-aos-duration="1000">
           <h5 class="fw-bold text-lg-start">
             <span class="text-warning">UPLIFT</span> is India’s first D2C, tech-enabled,<br>on-demand lift maintenance
             service
@@ -545,13 +545,15 @@ img, video, section, div {
 
               <!-- Book a Service -->
               <div class="col-12 col-md-6">
-                <button class="btn btn-dark w-100 py-4 h-100 d-flex align-items-center justify-content-center">
-                  <img src="images/Need of the hour! (17).png" class="me-3 img-fluid" style="max-width: 60px;"
-                    alt="icon">
-                  <div class="text-start fw-bold">
-                    Book<br><span class="fw-lighter">a Service</span>
-                  </div>
-                </button>
+              <a href="book-service.html" class="text-decoration-none">
+  <button class="btn btn-dark w-100 py-4 h-100 d-flex align-items-center justify-content-center">
+    <img src="images/Need of the hour! (17).png" class="me-3 img-fluid" style="max-width: 60px;" alt="icon">
+    <div class="text-start fw-bold text-white">
+      Book<br><span class="fw-lighter">a Service</span>
+    </div>
+  </button>
+</a>
+
               </div>
 
               <!-- Partner with Us -->
@@ -648,7 +650,7 @@ img, video, section, div {
               button.style.zIndex = '9999';
              button.innerHTML = `
                <a href="javascript:void(0)" id="explore-btn" style="text-decoration:none;">
-                 <button style="display: flex; align-items: center; gap: 8px; padding:10px 20px; background-color:rgb(34, 206, 186); color:white; border:none; border-radius:30px; ">
+                 <button style="display: flex; align-items: center; gap: 8px; padding:8px 20px; background: linear-gradient(to right, #f36f21, #d54e00); color:white; font-weight: 700; border:none; border-radius:30px; ">
                       <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
     <path d="m.76 21.24 1.412-5.12A10.324 10.324 0 0 1 .76 10.93C.76 5.35 5.35.76 10.964.76 16.58.76 21.24 5.35 21.24 10.93c0 5.578-4.661 10.31-10.276 10.31-1.765 0-3.46-.565-4.978-1.413L.76 21.24Z" fill="#EDEDED"></path>
     <path d="m6.268 17.991.318.177c1.307.812 2.825 1.306 4.414 1.306 4.626 0 8.474-3.848 8.474-8.545 0-4.696-3.848-8.404-8.51-8.404-4.66 0-8.439 3.743-8.439 8.404 0 1.624.46 3.213 1.307 4.555l.212.318-.812 2.966 3.036-.777Z" fill="#25D366"></path>
@@ -708,7 +710,7 @@ img, video, section, div {
     align-items: center;  /* Vertical Center */
     text-align: center; /* Text Center */
     padding: 10px;}">
-   <button id="start-chat-btn" style="background-color: #22ceba;
+   <button id="start-chat-btn" style="background: linear-gradient(to right, #f36f21, #d54e00);
     color: white;
     width: 90%;
     padding: 10px 20px;
@@ -747,7 +749,8 @@ img, video, section, div {
              });
          
            })();
-         </script>
+   </script>
+
 
 </body>
 
