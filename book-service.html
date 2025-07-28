@@ -32,6 +32,32 @@
       box-sizing: border-box;
       max-width: 100%;
     }
+    .section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.section-heading .line {
+  flex: 1;
+  height: 1px;
+  background-color: #ccc;
+  max-width: 200px;
+}
+
+.section-heading .heading-text {
+  background-color: #000;
+  color: #cbd5f1; /* light bluish color similar to your screenshot */
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
 .call-whatsapp-box {
   display: inline-block;
   background-color: #fbc531; /* yellow */
@@ -129,13 +155,18 @@
         </div>
       </div>
         </div>  
-            <div class="col-md-5  text-center" data-aos="fade-up">
+        <div class="col-md-5  text-center" data-aos="fade-up">
         <a href="https://wa.me/919560222957" target="_blank" class="call-whatsapp-box">
-  <span class="label">Call or Whatsapp:</span>
-  <span class="number"><strong>+91 9560 222 957</strong></span>
-</a>
+         <span class="label">Call or Whatsapp:</span>
+          <span class="number"><strong>+91 9560 222 957</strong></span>
+        </a>
+        <div class="section-heading">
+  <span class="line"></span>
+  <span class="heading-text">BOOK YOUR SERVICE</span>
+  <span class="line"></span>
+</div>
 
-          </div>  
+       </div>  
       </div>
 
     </div>
@@ -149,9 +180,5 @@
   <script>
     AOS.init({ duration: 1000, once: true });
   </script>
-
-
-
 </body>
-
 </html>

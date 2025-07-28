@@ -4,7 +4,7 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
@@ -15,21 +15,51 @@
 
   <title>Uplift Services</title>
   <style>
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-img, video, section, div {
-  max-width: 100%;
-  box-sizing: border-box;
-}
+    body {
+      max-width: 100vw;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
 
-* {
-  box-sizing: border-box;
-  max-width: 100%;
-}
+    img,
+    video,
+    section,
+    div {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
 
+    * {
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+
+
+    .nav-pills .nav-link {
+      background-color: #212529;
+      color: #fff;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-pills .nav-link:hover {
+      background-color: #343a40;
+      color: #fff;
+    }
+
+    .card {
+      border-radius: 15px;
+
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+      color: #fff;
+      background: linear-gradient(178deg, #64a34570, #4b8e3400);
+
+      border-radius: 0.5rem;
+      transform: scale(1.03);
+    }
 
     .custom-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
@@ -47,6 +77,17 @@ img, video, section, div {
       }
     }
 
+    @media (min-width: 768px) {
+      .overlap-buttons {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+      }
+
+    }
+
     /* Vertical dotted arrow between top and bottom steps */
     @media (min-width: 768px) {
       .vertical-dotted-line {
@@ -55,7 +96,7 @@ img, video, section, div {
         top: 4%;
         transform: translateX(-50%);
         width: 2px;
-        height: 300px;
+        height: 287px;
         background-image: linear-gradient(to bottom, white 50%, transparent 0%);
         background-size: 6px 6px;
         background-repeat: repeat-y;
@@ -65,11 +106,25 @@ img, video, section, div {
       .vertical-dotted-line::after {
         content: "";
         position: absolute;
-        top: 300px;
+        top: 287px;
         /* same as vertical height */
         left: 1px;
         /* slight shift to align properly */
         width: 80px;
+        height: 2px;
+        background-image: linear-gradient(to right, white 50%, transparent 0%);
+        background-size: 6px 6px;
+        background-repeat: repeat-x;
+      }
+
+      .vertical-dotted-line::before {
+        content: "";
+        position: absolute;
+        bottom: 287px;
+        /* same as vertical height */
+        left: 1px;
+        /* slight shift to align properly */
+        width: 70px;
         height: 2px;
         background-image: linear-gradient(to right, white 50%, transparent 0%);
         background-size: 6px 6px;
@@ -98,7 +153,7 @@ img, video, section, div {
         top: 6%;
         transform: translateX(-50%);
         width: 2px;
-        height: 300px;
+        height: 292px;
         background-image: linear-gradient(to bottom, white 50%, transparent 0%);
         background-size: 6px 6px;
         background-repeat: repeat-y;
@@ -108,8 +163,8 @@ img, video, section, div {
       .vertical-dotted-line2::after {
         content: "";
         position: absolute;
-        top: 300px;
-        /* height before turn */
+        top: 292px;
+        /* height befre turn */
         left: -80px;
         /* to turn left */
         width: 80px;
@@ -119,19 +174,62 @@ img, video, section, div {
         background-repeat: repeat-x;
       }
 
-
-      .with-arrow-down2::after {
+      .vertical-dotted-line2::before {
         content: "";
         position: absolute;
-        top: calc(100% + 78px);
-        left: 100%;
-        transform: translateX(-50%) rotate(45deg);
+        bottom: 292px;
+        /* height befre turn */
+        left: -68px;
+        /* to turn left */
+        width: 70px;
+        height: 2px;
+        background-image: linear-gradient(to right, white 50%, transparent 0%);
+        background-size: 6px 6px;
+        background-repeat: repeat-x;
+      }
+
+      .vertical-dotted-line2::after,
+      .vertical-dotted-line2::before,
+      .vertical-dotted-line2::marker {
+        box-sizing: border-box;
+      }
+
+      .with-arrow-up::after {
+        content: "";
+        position: absolute;
+        top: calc(100% + -90px);
+        right: -3%;
+        transform: translateX(-50%) rotate(-135deg);
+        /* Points arrow UP */
         width: 10px;
         height: 10px;
         border-right: 2px solid white;
         border-bottom: 2px solid white;
         z-index: 1;
       }
+
+      /* Middle arrow pointing down */
+      .arrow-up {
+        position: absolute;
+        top: 50%;
+        /* Center vertically */
+        left: 50%;
+        /* Center horizontally */
+        transform: translate(-50%, -50%) rotate(-135deg);
+        /* Arrow pointing UP */
+        width: 12px;
+        height: 12px;
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        background-color: transparent;
+        z-index: 2;
+      }
+
+      .arrow-up {
+        pointer-events: none;
+      }
+
+
     }
 
     .process-img {
@@ -150,6 +248,10 @@ img, video, section, div {
 
     }
 
+    .btn-price {
+      background-color: #64a345;
+    }
+
     .process-step {
       position: relative;
       margin-bottom: 40px;
@@ -165,7 +267,7 @@ img, video, section, div {
       .process-arrow:after {
         content: "";
         position: absolute;
-        top: 5%;
+        top: 4%;
         right: -50px;
         width: 100px;
         height: 2px;
@@ -173,6 +275,40 @@ img, video, section, div {
         background-size: 10px 2px;
         background-repeat: repeat-x;
       }
+
+      @media (min-width: 768px) {
+        .process-arrow {
+          position: relative;
+        }
+
+        .process-arrow:after {
+          content: "";
+          position: absolute;
+          top: 4%;
+          right: -50px;
+          width: 100px;
+          height: 2px;
+          background-image: linear-gradient(to right, white 50%, transparent 0%);
+          background-size: 10px 2px;
+          background-repeat: repeat-x;
+        }
+
+        .process-arrow::before {
+          content: "";
+          position: absolute;
+          top: 4%;
+          right: 0;
+          /* adjust arrow position */
+          transform: translate(50%, -50%) rotate(45deg);
+          width: 10px;
+          height: 10px;
+
+          border-right: 2px solid white;
+          border-top: 2px solid white;
+          background: transparent;
+        }
+      }
+
 
       .last-step:after {
         display: none;
@@ -184,25 +320,34 @@ img, video, section, div {
       z-index: 10;
     }
 
+    .rounded-3 {
+      border-radius: 1rem !important;
+    }
+
     .up_img {
       width: 34%;
+    }
+
+    .light-color {
+      color: #aabce2;
     }
   </style>
 
 <body style="background-color: #000;">
-    <!-- Top Row (Logo + WhatsApp Number on large devices only) -->
-    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between px-5 py-2 d-none d-lg-flex" style="background: linear-gradient(to right, #f36f218c, #d54e004d);">
-      <!-- Logo -->
-      <div class="d-flex align-items-center">
-        <!-- Optional: Place logo here if needed in top row -->
-      </div>
-
-      <!-- WhatsApp Number -->
-      <div class="text-end">
-        <span style="color: #64a345; font-weight: 600;">Call or Whatsapp:</span>&nbsp;
-        <span class="fw-bold fs-5" style="color:#f9c026;">+91 9560 222 957</span>
-      </div>
+  <!-- Top Row (Logo + WhatsApp Number on large devices only) -->
+  <div class="d-flex w-100 flex-wrap align-items-center justify-content-between px-5 py-2 d-none d-lg-flex"
+    style="background: linear-gradient(to right, #f36f218c, #d54e004d);">
+    <!-- Logo -->
+    <div class="d-flex align-items-center">
+      <!-- Optional: Place logo here if needed in top row -->
     </div>
+
+    <!-- WhatsApp Number -->
+    <div class="text-end">
+      <span style="color: #64a345; font-weight: 600;">Call or Whatsapp:</span>&nbsp;
+      <span class="fw-bold fs-5" style="color:#f9c026;">+91 9560 222 957</span>
+    </div>
+  </div>
   <header class="px-md-5 px-2 sticky-top  shadow-sm"
     style="background-image: url('images/Need of the hour! (24).png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
     data-aos="fade-down" data-aos-duration="1000">
@@ -275,36 +420,36 @@ img, video, section, div {
   </section>
 
   <!-- Features Section -->
-<section class="py-4">
-  <div class="container">
-    <div class="row justify-content-center border-top pt-5">
-      <div class="col-12 col-md-3 mb-3 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-        <div class="d-flex align-items-center text-start">
-          <img src="/images/Need of the hour! (1).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
-          <p class="fw-bold mb-0 text-white">Satisfaction <br> Guarantee</p>
+  <section class="py-4">
+    <div class="container">
+      <div class="row justify-content-center border-top pt-5">
+        <div class="col-12 col-md-3 mb-3 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="d-flex align-items-center text-start">
+            <img src="/images/Need of the hour! (1).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
+            <p class="fw-bold mb-0 text-white">Satisfaction <br> Guarantee</p>
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-md-3 mb-3 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="200">
-        <div class="d-flex align-items-center text-start">
-          <img src="/images/Need of the hour! (19).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
-          <p class="fw-bold mb-0 text-white">Transparent & <br> Fixed Pricing</p>
+        <div class="col-12 col-md-3 mb-3 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="200">
+          <div class="d-flex align-items-center text-start">
+            <img src="/images/Need of the hour! (19).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
+            <p class="fw-bold mb-0 text-white">Transparent & <br> Fixed Pricing</p>
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-md-3 mb-3 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="300">
-        <div class="d-flex align-items-center text-start">
-          <img src="/images/Need of the hour! (20).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
-          <p class="fw-bold mb-0 text-white">Verified Trained <br> Technicians</p>
+        <div class="col-12 col-md-3 mb-3 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="300">
+          <div class="d-flex align-items-center text-start">
+            <img src="/images/Need of the hour! (20).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
+            <p class="fw-bold mb-0 text-white">Verified Trained <br> Technicians</p>
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-md-3 mb-3 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="400">
-        <div class="d-flex align-items-center text-start">
-          <img src="/images/Need of the hour! (21).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
-          <p class="fw-bold mb-0 text-white">Genuine <br> Parts & Tools</p>
+        <div class="col-12 col-md-3 mb-3 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="400">
+          <div class="d-flex align-items-center text-start">
+            <img src="/images/Need of the hour! (21).png" alt="icon" class="me-3" style="width: 40px; height: auto;">
+            <p class="fw-bold mb-0 text-white">Genuine <br> Parts & Tools</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- User Journey Banner -->
@@ -312,7 +457,7 @@ img, video, section, div {
     <p class="mb-0 py-4 px-3 bg-dark text-white text-center fw-bold rounded" data-aos="fade-up"
       data-aos-duration="1000">
       User Journey from
-      <span class="text-warning">Frustration to Fix —</span><br>
+      <span style="color: #f88c3d;">Frustration to Fix —</span><br>
       Powered by <span class="text-info">UPLIFT</span>.
     </p>
   </section>
@@ -340,13 +485,17 @@ img, video, section, div {
           <img src="images/Need of the hour! (2).png" class="img-fluid  process-img2" alt="Animated Person">
 
         </div>
-
-        <div class="col-12 col-md-4 process-step last-step with-arrow-down" data-aos="fade-up" data-aos-delay="400">
+        <div class="col-12 col-md-4 process-step with-arrow-up" data-aos="fade-up" data-aos-delay="400">
           <h6 class="text-success fw-bold">Reports & Follow ups</h6>
           <p class="small text-white">Subscribes to AMC → Receives <br> reminders, logs, priority support.</p>
           <img src="images/Need of the hour! (6).png" class="img-fluid process-img" alt="Reports and Updates">
+
           <div class="vertical-dotted-line2"></div>
+
         </div>
+
+
+
       </div>
 
 
@@ -388,49 +537,222 @@ img, video, section, div {
     <!-- Services Overview Section -->
     <div class="container pb-5">
       <div class="row align-items-center pb-5">
-        <!-- Left Service Buttons -->
+        <!-- Left Service Tabs -->
         <div class="col-md-4 px-5 mb-4 mb-md-0 text-center text-md-start">
-          <div class="d-grid gap-3 px-4">
-            <button class="btn btn-success text-start px-4 py-2 rounded-5 fw-bold">
+          <div class="d-grid gap-3 px-4 nav flex-column nav-pills" id="service-tabs" role="tablist"
+            aria-orientation="vertical">
+            <button class="btn btn-success text-start px-4 py-2 rounded-5 fw-bold nav-link active" id="inspect-tab"
+              data-bs-toggle="pill" data-bs-target="#inspect" type="button" role="tab" aria-controls="inspect"
+              aria-selected="true">
               <img src="/images/Need of the hour! (8).png" class="w-25 img-fluid me-2" alt=""> Inspect+
             </button>
-            <button class="btn btn-dark text-start px-4 py-2 rounded-5 fw-bold">
+            <button class="btn btn-dark text-start px-4 py-2 rounded-5 fw-bold nav-link" id="assure-tab"
+              data-bs-toggle="pill" data-bs-target="#assure" type="button" role="tab" aria-controls="assure"
+              aria-selected="false">
               <img src="/images/Need of the hour! (9).png" class="w-25 img-fluid me-2" alt=""> Assure+
             </button>
-            <button class="btn btn-dark text-start px-4 py-2 rounded fw-bold">
+            <button class="btn btn-dark text-start px-4 py-2 rounded fw-bold nav-link" id="cabinclean-tab"
+              data-bs-toggle="pill" data-bs-target="#cabinclean" type="button" role="tab" aria-controls="cabinclean"
+              aria-selected="false">
               <img src="/images/Need of the hour! (10).png" class="w-25 img-fluid me-2" alt=""> CabinClean
             </button>
-            <button class="btn btn-dark text-start px-4 py-2 rounded fw-bold">
+            <button class="btn btn-dark text-start px-4 py-2 rounded fw-bold nav-link" id="liftsos-tab"
+              data-bs-toggle="pill" data-bs-target="#liftsos" type="button" role="tab" aria-controls="liftsos"
+              aria-selected="false">
               <img src="/images/Need of the hour! (11).png" class="w-25 img-fluid me-2" alt=""> LiftSOS
             </button>
           </div>
         </div>
 
-        <!-- Right Info Card -->
-        <div class="col-md-8">
-          <div class="card bg-warning border-0 rounded-5 p-3 text-black">
-            <div class="row align-items-center">
-              <div class="col-md-6 mb-3 mb-md-0">
-                <img src="images/Need of the hour! (7).png" alt="Technician at Work" class="img-fluid rounded  pe-md-5"
-                  style="left: -30px;">
+        <!-- Right Tab Contents -->
+        <div class="col-md-8 px-md-4 ">
+          <div class="tab-content " id="service-tabs-content">
+            <!-- Inspect+ Content -->
+            <div class="tab-pane fade show active" id="inspect" role="tabpanel" aria-labelledby="inspect-tab">
+
+              <div class="card bg-dark text-white p-5 rounded-4">
+                <div class="row g-4 align-items-center">
+
+                  <!-- Text and Icon -->
+                  <div class="col-md-7">
+                    <div class="d-flex align-items-center mb-3">
+                      <img src="/images/inspect-logo.png" alt="Inspect Icon" class="me-3" style="width: 35px;">
+                      <h4 class="text-warning fw-bold mb-0">INSPECT+</h4>
+                    </div>
+
+                    <p class=" mb-3">
+                      Detailed Inspection & Servicing of doors, locks, machine components, ropes, cartop, controller,
+                      guide rails, and sill tracks — with oiling of guides, rollers, hinges, and mechanical parts to
+                      ensure smooth, quiet, and reliable lift operation.
+                    </p>
+
+                    <div class="row text-center mt-4">
+                      <div class="col-8">
+                        <h6 class="light-color my-3">Charges (Incl. of GST)</h6>
+                        <div class="btn-price text-white rounded py-2 px-3">
+                          <h5 class="fw-bold mb-0">Rs. 899/-</h5>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- Image -->
+                  <div class="col-md-5 text-center">
+                    <img src="/images/inspection.png" alt="Inspect Service" class="img-fluid rounded-3" />
+
+                    <h6 class="light-color my-3">Service Duration (Max.)</h6>
+                    <div class="btn-price text-white rounded py-2 px-3">
+
+                      <h5 class="fw-bold mb-0">2 Hours</h5>
+                    </div>
+
+                  </div>
+                </div>
               </div>
-              <div class="col-md-6 text-black text-lg-start text-dark">
-                <h5 class="fw-bold text-black">Routine Inspection and Oiling</h5>
-                <p class="text-success fw-bold">Rs. 899 | 2 hours</p>
-                <p class="small text-black fw-bold">
-                  Detailed Inspection & Servicing of doors, locks, machine components, ropes, cartop, controller, guide
-                  rails,
-                  and sill tracks — with oiling of guides, rollers, hinges, and mechanical parts to ensure smooth,
-                  quiet,
-                  and reliable lift operation.
-                </p>
-                <button class="btn btn-success">Book Now</button>
-              </div>
+
+
             </div>
+
+            <!-- Assure+ Content -->
+            <div class="tab-pane fade" id="assure" role="tabpanel" aria-labelledby="assure-tab">
+
+              <div class="card bg-dark text-white p-5 rounded-4">
+                <div class="row g-4 align-items-center">
+
+                  <!-- Text Content -->
+                  <div class="col-md-7">
+                    <div class="d-flex align-items-center mb-3">
+                      <img src="/images/assuer-logo.png" alt="Assure Icon" class="me-3" style="width: 35px;">
+                      <h4 class="text-warning fw-bold mb-0">Assure+</h4>
+                    </div>
+
+                    <p class="text-white  mb-3">
+                      Covers routine inspections, adjustments, lubrication, and minor preventive maintenance of all
+                      key lift components.<br>
+                      <strong>Spare parts and major repairs are chargeable separately.</strong>
+                    </p>
+
+                    <ul class="text-white small mb-4 ps-4">
+                      <li><strong>6 Preventive & Housekeeping Visits / Year</strong></li>
+                      <li><strong>4 Emergency Visits / Year</strong></li>
+                      <li><strong>WhatsApp Service Log</strong></li>
+                    </ul>
+                  </div>
+
+                  <!-- Image & Pricing -->
+                  <div class="col-md-5 text-center">
+                    <img src="/images/assure.png" alt="Assure+ Maintenance" class="img-fluid rounded-3 mb-3" />
+
+                    <div>
+                      <h6 class="light-color">Charges (Incl. of GST)</h6>
+                      <div class="btn-price text-white rounded py-2 px-3 d-inline-block mt-1">
+                        <h5 class="fw-bold mb-0">Rs. 11,999/-</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <!-- CabinClean Content -->
+            <div class="tab-pane fade" id="cabinclean" role="tabpanel" aria-labelledby="cabinclean-tab">
+
+              <div class="card bg-dark text-white p-5 rounded-4">
+                <div class="row g-4 align-items-center">
+
+                  <!-- Text Content -->
+                  <div class="col-md-7">
+                    <div class="d-flex align-items-center mb-3">
+                      <img src="/images/cabin-logo.png" alt="Cabin Clean Icon" class="me-3" style="width: 35px;">
+                      <h4 class="text-warning fw-bold mb-0">CABIN<br>CLEAN</h4>
+                    </div>
+
+                    <p class="text-white  mb-3">
+                      Deep cleaning of cabin, doors, buttons, mirrors, and machine room — finished with a fresh
+                      fragrance for a lift that feels hygienic and pleasantly fresh.
+                    </p>
+
+                    <div class="row text-center mt-4">
+                      <div class="col-9">
+                        <h6 class="light-color my-3">Charges (Incl. of GST)</h6>
+                        <div class="btn-price text-white rounded py-2 px-3">
+                          <h5 class="fw-bold mb-0">Rs. 299/-</h5>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- Image -->
+                  <div class="col-md-5 text-center">
+                    <img src="/images/clean.png" alt="Cabin Clean Service" class="img-fluid rounded-3" />
+                    <h6 class="light-color my-3">Service Duration (Max.)</h6>
+                    <div class="btn-price text-white rounded py-2 px-3">
+
+                      <h5 class="fw-bold mb-0">1 Hour</h5>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <!-- LiftSOS Content -->
+            <div class="tab-pane fade" id="liftsos" role="tabpanel" aria-labelledby="liftsos-tab">
+
+              <div class="card bg-dark text-white p-5 rounded-4">
+                <div class="row g-4 align-items-center">
+                  <!-- Text Content -->
+                  <div class="col-md-7">
+                    <div class="d-flex align-items-center mb-3">
+                      <img src="/images/lifsos-logo.png" alt="LiftSOS Icon" class="me-3" style="width: 35px;">
+                      <h4 class="text-warning fw-bold mb-0">LiftSOS</h4>
+                    </div>
+                    <p class="text-white  mb-3">
+                      Fast response for breakdowns and stuck lifts. We inspect and restore alarms, fireman switch, pit
+                      switch, landing and car gate safety devices, doors, ropes, and control systems — ensuring safety
+                      and smooth operation without delay.
+                    </p>
+                    <div class="row text-center mt-4">
+                      <div class="col-8">
+
+                        <h6 class="light-color my-3">Charges (Incl. of GST)</h6>
+                        <div class="btn-price text-white rounded py-2 px-3">
+
+                          <h5 class="fw-bold mb-0">Rs. 1,199/-</h5>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- Image -->
+                  <div class="col-md-5 text-center">
+                    <img src="/images/lifsos.png" alt="LiftSOS Service" class="img-fluid rounded-3 " />
+
+                    <h6 class="light-color my-3">Service Duration (Max.)</h6>
+                    <div class="btn-price text-white rounded py-2 px-3">
+
+                      <h5 class="fw-bold mb-0">2 Hours</h5>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
           </div>
         </div>
       </div>
     </div>
+
   </section>
 
   <!-- Features + Form Section -->
@@ -540,19 +862,19 @@ img, video, section, div {
 
           <!-- Overlapping Buttons -->
           <div class="container position-relative">
-            <div
-              class="row g-5 justify-content-center overlap-buttons position-absolute top-0 start-50 translate-middle-x w-100">
+            <div class="row g-5 justify-content-center overlap-buttons">
 
               <!-- Book a Service -->
               <div class="col-12 col-md-6">
-              <a href="book-service.html" class="text-decoration-none">
-  <button class="btn btn-dark w-100 py-4 h-100 d-flex align-items-center justify-content-center">
-    <img src="images/Need of the hour! (17).png" class="me-3 img-fluid" style="max-width: 60px;" alt="icon">
-    <div class="text-start fw-bold text-white">
-      Book<br><span class="fw-lighter">a Service</span>
-    </div>
-  </button>
-</a>
+                <a href="book-service.html" target="_blank" class="text-decoration-none">
+                  <button class="btn btn-dark w-100 py-4 h-100 d-flex align-items-center justify-content-center">
+                    <img src="images/Need of the hour! (17).png" class="me-3 img-fluid" style="max-width: 60px;"
+                      alt="icon">
+                    <div class="text-start fw-bold text-white">
+                      Book<br><span class="fw-lighter">a Service</span>
+                    </div>
+                  </button>
+                </a>
 
               </div>
 
@@ -641,14 +963,14 @@ img, video, section, div {
     });
   </script>
   <script>
-           (function() {    
-             const button = document.createElement('div');
-             button.id = 'whatsapp-button';
-             button.style.position = 'fixed';
-             button.style.bottom = '20px';
-             button.style['right'] = '20px';
-              button.style.zIndex = '9999';
-             button.innerHTML = `
+    (function () {
+      const button = document.createElement('div');
+      button.id = 'whatsapp-button';
+      button.style.position = 'fixed';
+      button.style.bottom = '20px';
+      button.style['right'] = '20px';
+      button.style.zIndex = '9999';
+      button.innerHTML = `
                <a href="javascript:void(0)" id="explore-btn" style="text-decoration:none;">
                  <button style="display: flex; align-items: center; gap: 8px; padding:8px 20px; background: linear-gradient(to right, #f36f21, #d54e00); color:white; font-weight: 700; border:none; border-radius:30px; ">
                       <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
@@ -733,25 +1055,23 @@ img, video, section, div {
                  </div>
                </div>
              `;
-             
-             document.body.appendChild(button);
-         
-             document.getElementById("explore-btn").addEventListener("click", function() {
-               document.getElementById("whatsapp-previews").style.display = "block";
-             });
 
-                    document.getElementById("close-chat").addEventListener("click", function () {
-                    document.getElementById("whatsapp-previews").style.display = "none";
-                  });
-         
-             document.getElementById("start-chat-btn").addEventListener("click", function() {
-               window.open('https://wa.me/+919560222957?text=Hi%2C%20I%20want%20to%20know%20more!', '_blank');
-             });
-         
-           })();
-   </script>
+      document.body.appendChild(button);
 
+      document.getElementById("explore-btn").addEventListener("click", function () {
+        document.getElementById("whatsapp-previews").style.display = "block";
+      });
 
+      document.getElementById("close-chat").addEventListener("click", function () {
+        document.getElementById("whatsapp-previews").style.display = "none";
+      });
+
+      document.getElementById("start-chat-btn").addEventListener("click", function () {
+        window.open('https://wa.me/+919560222957?text=Hi%2C%20I%20want%20to%20know%20more!', '_blank');
+      });
+
+    })();
+  </script>
 </body>
 
 </html>
